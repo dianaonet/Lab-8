@@ -11,9 +11,9 @@ namespace Lab8.Controllers
     {
         public static List<ProjectEvaluation> ListOfProject = new List<ProjectEvaluation>
         {
-            new ProjectEvaluation() {name="Diana", city = "Cluj", country="Romania", rating= 9.5},
-            new ProjectEvaluation() {name="Maria", city = "<script> alert('xss'); </script>", country="Romania", rating= 7.34},
-            new ProjectEvaluation() {name="Razvan", city = "Sibiu", country="Romania", rating= 8.8}
+            new ProjectEvaluation() {name="Diana", city = "Cluj", country="Romania", rating= 9.5, id=1},
+            new ProjectEvaluation() {name="Maria", city = "<script> alert('xss'); </script>", country="Romania", rating= 7.34, id=3},
+            new ProjectEvaluation() {name="Razvan", city = "Sibiu", country="Romania", rating= 8.8, id=4}
         };
         // GET: Evaluation
         public ActionResult Index()
@@ -59,16 +59,24 @@ namespace Lab8.Controllers
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
-            try
-            {
-                // TODO: Add update logic here
+            var evaluation = ListOfProject.Single(e => e.id == id);
 
+            if (TryUpdateModel(evaluation))
+            {
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            return View(evaluation);
+
+            //try
+            //{
+            //    // TODO: Add update logic here
+
+            //    return RedirectToAction("Index");
+            //}
+            //catch
+            //{
+            //    return View();
+            //}
         }
 
         // GET: Evaluation/Delete/5

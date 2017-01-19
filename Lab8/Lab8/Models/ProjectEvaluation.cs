@@ -14,5 +14,7 @@ namespace Lab8.Models
         public string country { get; set; }
 
         public double rating { get; set; }
+
+        public int id { get; set; }
     }
 }

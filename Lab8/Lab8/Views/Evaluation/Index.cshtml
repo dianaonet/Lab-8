@@ -8,7 +8,9 @@
 
 <p>
     @Html.ActionLink("Create New", "Create")
+
 </p>
+
 @*@<table class="table">
     <tr>
         <th>
@@ -61,7 +63,9 @@
         <div>
             <h4>@item.name</h4>
             <span>@item.rating</span>
+            <p>@item.id</p>
             <p>@item.city, @item.country</p>
+            <span>@Html.ActionLink("Edit", "Edit", new { id = item.id }) </span>
         </div>
     }
 </div>
