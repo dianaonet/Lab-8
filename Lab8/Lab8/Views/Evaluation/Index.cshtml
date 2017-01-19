@@ -57,17 +57,21 @@
 }
 
 </table>*@
-<div class="evaluation">
-    @foreach (var item in Model)
-    {
-        <div>
-            <h4>@item.name</h4>
-            <span>@item.rating</span>
-            <p>@item.id</p>
-            <p>@item.city, @item.country</p>
-            <span>@Html.ActionLink("Edit", "Edit", new { id = item.id }) </span>
-        </div>
-    }
+<div>
+    <div>
+        @Html.DisplayNameFor(model => model.name)
+        @Html.DisplayNameFor(model => model.rating)
+        @Html.DisplayNameFor(model => model.city)
+        @Html.DisplayNameFor(model => model.country)
+        @Html.DisplayNameFor(model => model.id)
+
+    </div>
+    <div>
+        @foreach (var item in Model)
+        {
+            @Html.Partial("~/Views/Evaluation/_Evaluation.cshtml", item)
+        }
+    </div>
 </div>
 
 
