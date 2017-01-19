@@ -29,19 +29,22 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.name)
+            <!--@Html.DisplayFor(modelItem => item.name)-->
+            @item.name
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.city)
-            @Html.Raw(item.city)
+            <!-- @Html.DisplayFor(modelItem => item.city)-->
+            <!--@Html.Raw(item.city)-->
             @item.city
 
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.country)
+           <!-- @Html.DisplayFor(modelItem => item.country)-->
+            @item.country
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.rating)
+            <!--@Html.DisplayFor(modelItem => item.rating)-->
+            @(item.rating / 10)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
