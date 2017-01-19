@@ -12,7 +12,7 @@ namespace Lab8.Controllers
         public static List<ProjectEvaluation> ListOfProject = new List<ProjectEvaluation>
         {
             new ProjectEvaluation() {name="Diana", city = "Cluj", country="Romania", rating= 9.5},
-            new ProjectEvaluation() {name="Maria", city = "Campeni City", country="Romania", rating= 7.34},
+            new ProjectEvaluation() {name="Maria", city = "<script> alert('xss'); </script>", country="Romania", rating= 7.34},
             new ProjectEvaluation() {name="Razvan", city = "Sibiu", country="Romania", rating= 8.8}
         };
         // GET: Evaluation
