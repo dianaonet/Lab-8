@@ -9,7 +9,7 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+@*@<table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.name)
@@ -54,4 +54,16 @@
     </tr>
 }
 
-</table>
+</table>*@
+<div>
+    @foreach (var item in Model)
+    {
+        <div>
+            <h4>@item.name</h4>
+            <span>@item.rating</span>
+            <p>@item.city, @item.country</p>
+        </div>
+    }
+</div>
+
+   
